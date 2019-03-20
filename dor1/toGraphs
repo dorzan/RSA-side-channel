@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+for i in range(4):
+    FILE_ALLSETS = "/home/ubu/eclipse-workspace/dor1/datashit{}.txt".format(i)
+    f_res = open(FILE_ALLSETS, "r")
+    res = np.fromfile(f_res, dtype=np.int16)
+    f_res.close()
+    print i, float(sum(res==0))/len(res)
+
+    plt.plot(res+13*i)
+
+plt.show()
+
